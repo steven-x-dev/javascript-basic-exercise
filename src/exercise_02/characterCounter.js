@@ -8,7 +8,7 @@ export default function countCharacter(string, prediction) {
 
   if (string === undefined || string === null) return 0;
 
-  if (prediction === undefined) return prediction.length;
+  if (prediction === undefined) return string.length;
 
   if (prediction === null || prediction.length !== 1) throw new Error('invalid character');
 
