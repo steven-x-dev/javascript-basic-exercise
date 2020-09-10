@@ -17,6 +17,14 @@ export default class Vector {
     this.y = y;
   }
 
+  get x() {
+    return this.x;
+  }
+
+  get y() {
+    return this.y;
+  }
+
   distance() {
     return Math.sqrt(this.x * this.x + this.y * this.y);
   }

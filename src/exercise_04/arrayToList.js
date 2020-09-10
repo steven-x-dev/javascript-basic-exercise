@@ -1,7 +1,13 @@
-export class Node {
+class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
+  }
+  get value() {
+    return this.value;
+  }
+  get next() {
+    return this.next;
   }
 }
 
