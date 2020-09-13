@@ -8,13 +8,11 @@ export default function countCharacter(string, prediction) {
 
   if (string === undefined || string === null) return 0;
 
-  if (prediction === undefined) return string.length;
-
-  if (prediction === null || prediction.length !== 1) throw new Error('invalid character');
+  if (prediction === undefined || prediction === null) return string.length;
 
   let count = 0;
   for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === prediction) count += 1;
+    if (prediction(string[i])) count += 1;
   }
 
   return count;

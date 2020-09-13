@@ -13,27 +13,39 @@ export default class Vector {
   // class.
 
   constructor(x, y) {
-    this.x = x;
-    this.y = y;
+    this._x = x;
+    this._y = y;
   }
 
   get x() {
-    return this.x;
+    return this._x;
+  }
+
+  set x(x) {
+    this._x = x;
   }
 
   get y() {
-    return this.y;
+    return this._y;
+  }
+
+  set y(y) {
+    this._y = y;
+  }
+
+  get getDistance() {
+    return Math.sqrt(this._x * this._x + this._y * this._y);
   }
 
   distance() {
-    return Math.sqrt(this.x * this.x + this.y * this.y);
+    return Math.sqrt(this._x * this._x + this._y * this._y);
   }
 
   static plus(v1, v2) {
-    return new Vector(v1.x + v2.x, v1.y + v2.y);
+    return new Vector(v1._x + v2._x, v1._y + v2._y);
   }
 
   static minus(v1, v2) {
-    return new Vector(v1.x - v2.x, v1.y - v2.y);
+    return new Vector(v1._x - v2._x, v1._y - v2._y);
   }
 }
